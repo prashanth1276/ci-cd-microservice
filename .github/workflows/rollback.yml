@@ -26,11 +26,8 @@ jobs:
       - name: Rollback using Docker Compose
         shell: powershell
         run: |
-          Set-Location $env:GITHUB_WORKSPACE
-          "IMAGE_TAG=${{ inputs.image_tag }}" | Out-File -Encoding ascii .env
-          docker-compose --env-file .env -f docker-compose.prod.yml pull
-          docker-compose --env-file .env -f docker-compose.prod.yml down
-          docker-compose --env-file .env -f docker-compose.prod.yml up -d
+          docker-compose -f docker-compose.prod.yml down
+          docker-compose -f docker-compose.prod.yml up -d
 
       - name: Verify rollback
         shell: powershell
