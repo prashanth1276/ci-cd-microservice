@@ -98,6 +98,13 @@ jobs:
           docker-compose -f docker-compose.prod.yml up -d
 
       - name: Health Check
+        shell: powershell
         run: |
-          sleep 5
-          curl -f http://localhost:5000/ || exit 1
+          Start-Sleep -Seconds 5
+          try {
+            Invoke-WebRequest http://localhost:5000/ -UseBasicParsing
+            Write-Host "Health check passed"
+          } catch {
+            Write-Error "Health check failed"
+            exit 1
+          }
