@@ -1,0 +1,6 @@
+services:
+  app:
+    image: ci-cd-microservice
+    build: .
+    ports:
+      - "5000:5000"
