@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-This project demonstrates a **production-grade CI/CD pipeline** for a Python-based microservice using **GitHub Actions**, **Docker**, **Docker Compose**, **SonarCloudQube**, and **GitHub Container Registry (GHCR)**.
+This project demonstrates a **production-grade CI/CD pipeline** for a Python-based microservice using **GitHub Actions**, **Docker**, **Docker Compose**, **SonarQubeCloud**, and **GitHub Container Registry (GHCR)**.
 
 The goal was to eliminate manual builds and deployments by implementing:
 
@@ -110,7 +110,7 @@ The CI pipeline runs automatically on:
 4. Run unit tests
 5. Enforce **80% coverage threshold**
 6. Generate coverage report (XML)
-7. Run **SonarCloud analysis**
+7. Run **SonarQubeCloud analysis**
 8. Enforce **Sonar Quality Gate**
 9. Build Docker image
 10. Tag image with:
@@ -175,7 +175,7 @@ A dedicated rollback workflow allows manually redeploying the production service
 
 ## Code Quality & Security
 
-### SonarCloud Integration
+### SonarQubeCloud Integration
 
 * Static code analysis
 * Code smells & maintainability checks
