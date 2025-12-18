@@ -200,12 +200,21 @@ Note: Self-hosted runners in public repos require trust. This setup reflects a c
 
 ---
 
-## How to Run Locally
+## How to Run Locally / Test the Service
 
-```bash
 # Development
 Docker Compose -f docker-compose.dev.yml up --build
 
 # Production-style
 Docker Compose -f docker-compose.prod.yml up -d
-```
+
+# Testing the Deployed Service
+After running the production containers, you can verify the service endpoints:
+
+- Health check: http://localhost:5000/
+- Sample endpoint: http://localhost:5000/hello
+
+Alternatively, you can run the automated tests:
+
+```bash
+pytest tests/
