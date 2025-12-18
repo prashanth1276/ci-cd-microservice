@@ -1,0 +1,8 @@
+services:
+  app:
+    image: ghcr.io/prashanth1276/ci-cd-microservice:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - APP_ENV=dev
+    restart: always
