@@ -26,6 +26,7 @@ jobs:
       - name: Rollback using Docker Compose
         shell: powershell
         run: |
+          echo "IMAGE_TAG=${{ inputs.image_tag }}" > .env
           docker-compose -f docker-compose.prod.yml down
           docker-compose -f docker-compose.prod.yml up -d
 
