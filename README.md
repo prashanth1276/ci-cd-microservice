@@ -110,7 +110,7 @@ The CI pipeline runs automatically on:
 4. Run unit tests
 5. Enforce **80% coverage threshold**
 6. Generate coverage report (XML)
-7. Run **SonarQubeCloud analysis**
+7. Run **SonarQubeCloud**
 8. Enforce **Sonar Quality Gate**
 9. Build Docker image
 10. Tag image with:
