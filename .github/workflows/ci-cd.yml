@@ -32,8 +32,9 @@ jobs:
 
       - name: Run tests
         run: |
+          pip install pytest-cov
           export PYTHONPATH=$PYTHONPATH:.
-          pytest
+          pytest --cov=app --cov-fail-under=80
 
       # SonarCloud (non-blocking)
       # - name: SonarQube Scan
