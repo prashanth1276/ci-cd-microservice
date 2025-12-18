@@ -31,7 +31,9 @@ jobs:
         run: flake8 app/
 
       - name: Run tests
-        run: pytest
+        run: |
+          export PYTHONPATH=$PYTHONPATH:.
+          pytest
 
       # SonarCloud (non-blocking)
       # - name: SonarQube Scan
