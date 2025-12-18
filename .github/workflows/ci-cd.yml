@@ -100,11 +100,17 @@ jobs:
       - name: Health Check
         shell: powershell
         run: |
-          Start-Sleep -Seconds 5
+          Start-Sleep -Seconds 10
+
           try {
-            Invoke-WebRequest http://localhost:5000/ -UseBasicParsing
+            $response = Invoke-WebRequest http://localhost:5000/ -UseBasicParsing -TimeoutSec 10
+            if ($response.StatusCode -ne 200) {
+              Write-Error "Health check failed with status $($response.StatusCode)"
+              exit 1
+            }
             Write-Host "Health check passed"
-          } catch {
+          }
+          catch {
             Write-Error "Health check failed"
             exit 1
           }
