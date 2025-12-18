@@ -30,7 +30,7 @@ jobs:
       - name: Lint
         run: flake8 app/
 
-      - name: Run tests
+      - name: Run tests with coverage
         run: |
           pip install pytest-cov
           export PYTHONPATH=$PYTHONPATH:.

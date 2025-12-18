@@ -9,3 +9,6 @@ def test_hello():
     client = app.test_client()
     response = client.get("/hello")
     assert response.status_code == 200
+
+def test_config_loaded():
+    assert app.config["ENV"] in ["dev", "prod"]

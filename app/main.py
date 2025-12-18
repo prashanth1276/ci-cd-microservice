@@ -1,16 +1,14 @@
 from flask import Flask, jsonify
-import os
+from app.config import Config
 
 
 app = Flask(__name__)
-
-
-ENV = os.getenv("APP_ENV", "dev")
+app.config.from_object(Config)
 
 
 @app.route("/")
 def health():
-    return jsonify({"status": "ok", "env": ENV}), 200
+    return jsonify({"status": "ok", "env": app.config["ENV"]}), 200
 
 
 @app.route("/hello")
