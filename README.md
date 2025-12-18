@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-This project demonstrates a **production-grade CI/CD pipeline** for a Python-based microservice using **GitHub Actions**, **Docker**, **Docker Compose**, **SonarQube**, and **GitHub Container Registry (GHCR)**.
+This project demonstrates a **production-grade CI/CD pipeline** for a Python-based microservice using **GitHub Actions**, **Docker**, **Docker Compose**, **SonarCloudQube**, and **GitHub Container Registry (GHCR)**.
 
 The goal was to eliminate manual builds and deployments by implementing:
 
@@ -16,8 +16,6 @@ The goal was to eliminate manual builds and deployments by implementing:
 * Versioned artifact publishing
 * **Real continuous deployment to a running environment**
 * Manual rollback by redeploying the latest production image
-
-This setup closely mirrors how modern engineering teams ship and maintain microservices in real-world environments.
 
 ---
 
@@ -29,7 +27,7 @@ This setup closely mirrors how modern engineering teams ship and maintain micros
 | Framework               | Flask                                       |
 | CI/CD                   | GitHub Actions                              |
 | Code Quality            | Flake8, Pytest, Pytest-Cov                  |
-| Security & Quality Gate | SonarCloud                                  |
+| Security & Quality Gate | SonarQubeCloud                                  |
 | Containerization        | Docker                                      |
 | Deployment              | Docker Compose (VM-based)                   |
 | Artifact Registry       | GitHub Container Registry (GHCR)            |
