@@ -13,7 +13,7 @@ def health():
 
 @app.route("/hello")
 def hello():
-    return jsonify({"message": "Hello from CI/CD pipeline"}), 200
+    return jsonify({"message": "Hello Im Prashanth"}), 200
 
 
 if __name__ == "__main__":
